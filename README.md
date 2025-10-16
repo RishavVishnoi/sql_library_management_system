@@ -165,7 +165,7 @@ HAVING COUNT(*) > 1;
 
 ### 3. CTAS (Create Table As Select)
 
-- **Task 6: Create Summary Tables**: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt**
+**Task 6: Create Summary Tables: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt**
 
 ```sql
 CREATE TABLE book_cnts
@@ -184,7 +184,7 @@ FROM book_cnts;
 
 The following SQL queries were used to address specific questions:
 
-**Task 7: Retrieve All Books in a Specific Category**:
+**Task 7: Retrieve All Books in a Specific Category**
 
 ```sql
 SELECT *
@@ -192,7 +192,7 @@ FROM books
 WHERE category = 'Classic';
 ```
 
-8. **Task 8: Find Total Rental Income by Category**:
+**Task 8: Find Total Rental Income by Category**
 
 ```sql
 SELECT category, SUM(rental_price) as total_rental_income, COUNT(*) as no_of_times_issued
@@ -202,7 +202,7 @@ GROUP BY 1
 ORDER BY 2 DESC;
 ```
 
-9. **List Members Who Registered in the Last 180 Days**:
+**Task 9: List Members Who Registered in the Last 180 Days**
 ```sql
 INSERT INTO members
 VALUES
@@ -214,7 +214,7 @@ FROM members
 WHERE reg_date >= CURRENT_DATE - INTERVAL'180 days';
 ```
 
-**Task 10: List Employees with Their Branch Manager's Name and their branch details**:
+**Task 10: List Employees with Their Branch Manager's Name and their branch details**
 
 ```sql
 SELECT e1.*, b.manager_id, e2.emp_name as manager
@@ -223,7 +223,7 @@ JOIN branch as b ON b.branch_id = e1.branch_id
 JOIN employees as e2 ON e2.emp_id = b.manager_id
 ```
 
-**Task 11: Create a Table of Books with Rental Price Above a Certain Threshold 7 USD**:
+**Task 11: Create a Table of Books with Rental Price Above a Certain Threshold 7 USD**
 ```sql
 CREATE TABLE books_price_greater_than_sevenusd
 AS
